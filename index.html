@@ -1,10 +1,344 @@
-<html>
-  <head>
-    <title>
-      wellcome
-      </title>
-      </head>
-      <body>
-      <h1><font color=CCFF99>ยินดีต้อนรับเข้าสู่เว็บไซต์ของ จิรวัฒน <font color=CCFF99></h1>
-      </body>
-  </html>
+```html
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>เที่ยวเพชรบูรณ์</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* เมนูด้านบน */
+        nav {
+            background-color: #2e7d32;
+            padding: 18px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        nav ul li a:hover {
+            color: #ffd54f;
+        }
+
+        /* ส่วนหน้าแรก */
+        .hero {
+            background-color: #81c784;
+            text-align: center;
+            padding: 100px 20px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #ffb300;
+            color: #333;
+            padding: 14px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #ffd54f;
+        }
+
+        /* ส่วนเนื้อหา */
+        section {
+            padding: 70px 8%;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title h2 {
+            color: #2e7d32;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .title p {
+            color: #666;
+        }
+
+        /* การ์ดสถานที่ */
+        .places {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .place {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+
+        .place:hover {
+            transform: translateY(-5px);
+        }
+
+        .place h3 {
+            color: #2e7d32;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .place p {
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* เกี่ยวกับเพชรบูรณ์ */
+        .about {
+            background-color: white;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 900px;
+            margin: auto;
+            line-height: 2;
+            font-size: 18px;
+        }
+
+        /* ติดต่อ */
+        .contact {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #123b15;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* รองรับมือถือ */
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .places {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- เมนู -->
+    <nav>
+        <div class="logo">เที่ยวเพชรบูรณ์</div>
+
+        <ul>
+            <li><a href="#home">หน้าแรก</a></li>
+            <li><a href="#places">สถานที่ท่องเที่ยว</a></li>
+            <li><a href="#about">เกี่ยวกับเพชรบูรณ์</a></li>
+            <li><a href="#contact">ติดต่อ</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- หน้าแรก -->
+    <section class="hero" id="home">
+
+        <h1>เที่ยวเพชรบูรณ์</h1>
+
+        <p>
+            สัมผัสธรรมชาติ ทะเลหมอก และวัฒนธรรม
+            ของจังหวัดเพชรบูรณ์
+        </p>
+
+        <a href="#places" class="button">
+            สถานที่ท่องเที่ยว
+        </a>
+
+    </section>
+
+
+    <!-- สถานที่ท่องเที่ยว -->
+    <section id="places">
+
+        <div class="title">
+            <h2>สถานที่ท่องเที่ยวแนะนำ</h2>
+
+            <p>
+                สถานที่ท่องเที่ยวยอดนิยมของจังหวัดเพชรบูรณ์
+            </p>
+        </div>
+
+
+        <div class="places">
+
+            <div class="place">
+                <h3>เขาค้อ</h3>
+
+                <p>
+                    เขาค้อเป็นสถานที่ท่องเที่ยวที่มีธรรมชาติ
+                    สวยงามและมีอากาศเย็นสบาย
+                    โดยเฉพาะในช่วงฤดูหนาวสามารถชมทะเลหมอก
+                    และพระอาทิตย์ขึ้นได้อย่างสวยงาม
+                </p>
+            </div>
+
+
+            <div class="place">
+                <h3>ภูทับเบิก</h3>
+
+                <p>
+                    ภูทับเบิกเป็นยอดเขาที่มีอากาศหนาวเย็น
+                    และเป็นจุดชมทะเลหมอกที่มีชื่อเสียง
+                    นักท่องเที่ยวนิยมเดินทางมาพักผ่อน
+                    และชมวิวภูเขา
+                </p>
+            </div>
+
+
+            <div class="place">
+                <h3>วัดพระธาตุผาซ่อนแก้ว</h3>
+
+                <p>
+                    วัดพระธาตุผาซ่อนแก้วเป็นสถานที่สำคัญ
+                    ทางพระพุทธศาสนา ตั้งอยู่ท่ามกลางภูเขา
+                    มีสถาปัตยกรรมที่สวยงาม
+                    และเป็นสถานที่ที่นักท่องเที่ยวนิยมมาเยี่ยมชม
+                </p>
+            </div>
+
+
+            <div class="place">
+                <h3>อุทยานแห่งชาติน้ำหนาว</h3>
+
+                <p>
+                    อุทยานแห่งชาติน้ำหนาวมีธรรมชาติที่อุดมสมบูรณ์
+                    มีป่าไม้ น้ำตก และจุดชมวิว
+                    เหมาะสำหรับผู้ที่ชื่นชอบธรรมชาติ
+                    และการท่องเที่ยวเชิงอนุรักษ์
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- เกี่ยวกับเพชรบูรณ์ -->
+    <section class="about" id="about">
+
+        <div class="title">
+            <h2>เกี่ยวกับจังหวัดเพชรบูรณ์</h2>
+        </div>
+
+        <p>
+            จังหวัดเพชรบูรณ์เป็นจังหวัดที่มีธรรมชาติสวยงาม
+            มีภูเขาและอากาศเย็นในหลายพื้นที่
+            โดยเฉพาะบริเวณเขาค้อและภูทับเบิก
+            นอกจากนี้ยังมีสถานที่สำคัญทางศาสนา
+            วัฒนธรรม และแหล่งท่องเที่ยวทางธรรมชาติ
+            ทำให้เพชรบูรณ์เป็นอีกหนึ่งจังหวัดที่เหมาะสำหรับ
+            การพักผ่อนและท่องเที่ยว
+        </p>
+
+    </section>
+
+
+    <!-- ติดต่อ -->
+    <section class="contact" id="contact">
+
+        <h2>ติดต่อเรา</h2>
+
+        <p>
+            สนใจข้อมูลการท่องเที่ยวจังหวัดเพชรบูรณ์
+            สามารถติดต่อสอบถามได้
+        </p>
+
+        <a href="mailto:travel@example.com" class="button">
+            ติดต่อเรา
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 เที่ยวเพชรบูรณ์
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```
