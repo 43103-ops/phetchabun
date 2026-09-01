@@ -1,104 +1,98 @@
-```html
 <!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แนะนำสถานที่ท่องเที่ยวเพชรบูรณ์</title>
+</head>
 
-    <title>เที่ยวไทยไปด้วยกัน</title>
+<body>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, "Tahoma", sans-serif;
-        }
+<header>
+    <h1>เที่ยวเพชรบูรณ์</h1>
+    <p>แนะนำสถานที่ท่องเที่ยวจังหวัดเพชรบูรณ์</p>
+</header>
 
-        html {
-            scroll-behavior: smooth;
-        }
+<nav>
+    <a href="#home">หน้าแรก</a> |
+    <a href="#place">สถานที่ท่องเที่ยว</a> |
+    <a href="#about">เกี่ยวกับเพชรบูรณ์</a>
+</nav>
 
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-        }
+<hr>
 
-        /* ===== Navbar ===== */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.75);
-            padding: 15px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
+<section id="home">
+    <h2>ยินดีต้อนรับ</h2>
+    <p>
+        เพชรบูรณ์เป็นจังหวัดที่มีธรรมชาติสวยงาม
+        มีภูเขา อากาศเย็น และสถานที่ท่องเที่ยวมากมาย
+    </p>
+</section>
 
-        .logo {
-            color: white;
-            font-size: 25px;
-            font-weight: bold;
-        }
+<section id="place">
+    <h2>สถานที่ท่องเที่ยว</h2>
 
-        .logo span {
-            color: #ffd166;
-        }
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>สถานที่</th>
+            <th>รายละเอียด</th>
+        </tr>
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
+        <tr>
+            <td>เขาค้อ</td>
+            <td>ชมทะเลหมอกและธรรมชาติที่สวยงาม</td>
+        </tr>
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-        }
+        <tr>
+            <td>ภูทับเบิก</td>
+            <td>ชมวิวภูเขาและสัมผัสอากาศหนาว</td>
+        </tr>
 
-        nav ul li a:hover {
-            color: #ffd166;
-        }
+        <tr>
+            <td>วัดพระธาตุผาซ่อนแก้ว</td>
+            <td>ชมวัดและสถาปัตยกรรมที่สวยงาม</td>
+        </tr>
 
-        /* ===== Hero ===== */
-        .hero {
-            height: 100vh;
-            background:
-                linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
-                url("https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=1600&q=80")
-                center/cover no-repeat;
+        <tr>
+            <td>อุทยานแห่งชาติน้ำหนาว</td>
+            <td>ท่องเที่ยวธรรมชาติและชมป่าไม้</td>
+        </tr>
+    </table>
+</section>
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
+<section id="about">
+    <h2>เกี่ยวกับเพชรบูรณ์</h2>
+    <p>
+        จังหวัดเพชรบูรณ์ตั้งอยู่ในภาคเหนือของประเทศไทย
+        มีสถานที่ท่องเที่ยวทั้งทางธรรมชาติและวัฒนธรรม
+        เหมาะสำหรับการพักผ่อนและท่องเที่ยว
+    </p>
+</section>
 
-        .hero-content h1 {
-            font-size: 60px;
-            margin-bottom: 20px;
-        }
+<section>
+    <h2>ข้อมูลผู้จัดทำ</h2>
 
-        .hero-content p {
-            font-size: 22px;
-            margin-bottom: 30px;
-        }
+    <table border="1" cellpadding="10">
+        <tr>
+            <td>ชื่อ</td>
+            <td>....................................</td>
+        </tr>
+        <tr>
+            <td>รหัสนักศึกษา</td>
+            <td>....................................</td>
+        </tr>
+        <tr>
+            <td>ชั้น/ห้อง</td>
+            <td>....................................</td>
+        </tr>
+    </table>
+</section>
 
-        .btn {
-            display: inline-block;
-            padding: 13px 28px;
-            background: #ffb703;
-            color: #222;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+<hr>
 
-        .btn:hover {
-            background: #ffd166;
+<footer>
+    <p>จัดทำโดยนักเรียน/นักศึกษา</p>
+    <p>เว็บไซต์แนะนำการท่องเที่ยวจังหวัดเพชรบูรณ์</p>
+</footer>
+
+</body>
+</html>
