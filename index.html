@@ -2,97 +2,689 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>แนะนำสถานที่ท่องเที่ยวเพชรบูรณ์</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>เที่ยวเพชรบูรณ์</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome สำหรับไอคอน -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Kanit", sans-serif;
+            background: #f4f8f5;
+            color: #333;
+        }
+
+        /* ---------------- NAVBAR ---------------- */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: #1b5e20;
+            color: white;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 15px 8%;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        nav .logo {
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #a5d6a7;
+        }
+
+        /* ---------------- HERO ---------------- */
+
+        .hero {
+            min-height: 550px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.4),
+                    rgba(0,0,0,0.4)
+                ),
+                url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        .main-btn {
+            display: inline-block;
+
+            background: #43a047;
+            color: white;
+
+            padding: 12px 30px;
+            border-radius: 30px;
+
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .main-btn:hover {
+            background: #2e7d32;
+            transform: scale(1.05);
+        }
+
+        /* ---------------- SECTION ---------------- */
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            color: #1b5e20;
+            font-size: 38px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* ---------------- CARDS ---------------- */
+
+        .places {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+
+            border-radius: 18px;
+            overflow: hidden;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.1);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.18);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 22px;
+        }
+
+        .card-content h3 {
+            color: #1b5e20;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .card-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* ---------------- ICON BUTTON ---------------- */
+
+        .icon-link {
+            width: 50px;
+            height: 50px;
+
+            display: inline-flex;
+
+            justify-content: center;
+            align-items: center;
+
+            background: #2e7d32;
+            color: white;
+
+            border-radius: 50%;
+
+            text-decoration: none;
+
+            font-size: 21px;
+
+            transition: 0.3s;
+        }
+
+        .icon-link:hover {
+            background: #ff9800;
+            transform: scale(1.15);
+        }
+
+        .link-text {
+            margin-left: 10px;
+            color: #2e7d32;
+        }
+
+        /* ---------------- ABOUT ---------------- */
+
+        .about {
+            background: #e8f5e9;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 850px;
+            margin: auto;
+
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* ---------------- FOOTER ---------------- */
+
+        footer {
+            background: #123d16;
+            color: white;
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+        footer .social {
+            margin-top: 15px;
+        }
+
+        footer a {
+            color: white;
+            font-size: 25px;
+            margin: 0 10px;
+
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            color: #ffca28;
+        }
+
+        /* ---------------- MOBILE ---------------- */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+            .hero-content p {
+                font-size: 17px;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<header>
-    <h1>เที่ยวเพชรบูรณ์</h1>
-    <p>แนะนำสถานที่ท่องเที่ยวจังหวัดเพชรบูรณ์</p>
-</header>
+
+<!-- ================= NAVBAR ================= -->
 
 <nav>
-    <a href="#home">หน้าแรก</a> |
-    <a href="#place">สถานที่ท่องเที่ยว</a> |
-    <a href="#about">เกี่ยวกับเพชรบูรณ์</a>
+
+    <div class="logo">
+        🌄 เที่ยวเพชรบูรณ์
+    </div>
+
+    <ul>
+        <li>
+            <a href="#home">หน้าแรก</a>
+        </li>
+
+        <li>
+            <a href="#places">สถานที่ท่องเที่ยว</a>
+        </li>
+
+        <li>
+            <a href="#about">เกี่ยวกับ</a>
+        </li>
+    </ul>
+
 </nav>
 
-<hr>
 
-<section id="home">
-    <h2>ยินดีต้อนรับ</h2>
+<!-- ================= HERO ================= -->
+
+<header class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            เที่ยวเพชรบูรณ์
+        </h1>
+
+        <p>
+            เมืองแห่งขุนเขา ทะเลหมอก และธรรมชาติ
+        </p>
+
+        <a href="#places" class="main-btn">
+            <i class="fa-solid fa-map-location-dot"></i>
+            สำรวจสถานที่ท่องเที่ยว
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= PLACES ================= -->
+
+<section id="places">
+
+    <div class="section-title">
+
+        <h2>
+            🏔️ 6 สถานที่ท่องเที่ยว
+        </h2>
+
+        <p>
+            สถานที่ท่องเที่ยวยอดนิยมในจังหวัดเพชรบูรณ์
+        </p>
+
+    </div>
+
+
+    <div class="places">
+
+
+        <!-- 1 เขาค้อ -->
+
+        <div class="card">
+
+            <img
+                class="card-img"
+                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80"
+                alt="เขาค้อ">
+
+            <div class="card-content">
+
+                <h3>
+                    🏔️ เขาค้อ
+                </h3>
+
+                <p>
+                    สถานที่ท่องเที่ยวชื่อดังของเพชรบูรณ์
+                    มีภูเขา ทะเลหมอก และอากาศเย็นสบาย
+                </p>
+
+                <!-- ICON กดเพื่อไปเว็บ -->
+
+                <a
+                    class="icon-link"
+                    href="https://www.google.com/search?q=เขาค้อ+เพชรบูรณ์"
+                    target="_blank"
+                    title="ดูข้อมูลเขาค้อ">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </a>
+
+                <span class="link-text">
+                    ดูข้อมูลเพิ่มเติม
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 2 น้ำหนาว -->
+
+        <div class="card">
+
+            <img
+                class="card-img"
+                src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80"
+                alt="อุทยานแห่งชาติน้ำหนาว">
+
+            <div class="card-content">
+
+                <h3>
+                    🌲 น้ำหนาว
+                </h3>
+
+                <p>
+                    อุทยานแห่งชาติที่เต็มไปด้วยป่าไม้
+                    ธรรมชาติ และอากาศบริสุทธิ์
+                </p>
+
+                <a
+                    class="icon-link"
+                    href="https://www.google.com/search?q=อุทยานแห่งชาติน้ำหนาว"
+                    target="_blank"
+                    title="ดูข้อมูลน้ำหนาว">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </a>
+
+                <span class="link-text">
+                    ดูข้อมูลเพิ่มเติม
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 3 วัดผาซ่อนแก้ว -->
+
+        <div class="card">
+
+            <img
+                class="card-img"
+                src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80"
+                alt="วัดผาซ่อนแก้ว">
+
+            <div class="card-content">
+
+                <h3>
+                    🛕 วัดผาซ่อนแก้ว
+                </h3>
+
+                <p>
+                    วัดที่ตั้งอยู่ท่ามกลางภูเขา
+                    มีพระพุทธรูปสีขาวขนาดใหญ่ที่โดดเด่น
+                </p>
+
+                <a
+                    class="icon-link"
+                    href="https://www.google.com/search?q=วัดผาซ่อนแก้ว+เพชรบูรณ์"
+                    target="_blank"
+                    title="ดูข้อมูลวัดผาซ่อนแก้ว">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </a>
+
+                <span class="link-text">
+                    ดูข้อมูลเพิ่มเติม
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 4 ภูทับเบิก -->
+
+        <div class="card">
+
+            <img
+                class="card-img"
+                src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=900&q=80"
+                alt="ภูทับเบิก">
+
+            <div class="card-content">
+
+                <h3>
+                    🌄 ภูทับเบิก
+                </h3>
+
+                <p>
+                    จุดชมวิวบนภูเขาที่มีอากาศเย็น
+                    และมีทะเลหมอกในช่วงเช้า
+                </p>
+
+                <a
+                    class="icon-link"
+                    href="https://www.google.com/search?q=ภูทับเบิก+เพชรบูรณ์"
+                    target="_blank"
+                    title="ดูข้อมูลภูทับเบิก">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </a>
+
+                <span class="link-text">
+                    ดูข้อมูลเพิ่มเติม
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 5 อนุสรณ์สถานผู้เสียสละเขาค้อ -->
+
+        <div class="card">
+
+            <img
+                class="card-img"
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+                alt="อนุสรณ์สถานเขาค้อ">
+
+            <div class="card-content">
+
+                <h3>
+                    🏛️ อนุสรณ์สถานเขาค้อ
+                </h3>
+
+                <p>
+                    สถานที่สำคัญทางประวัติศาสตร์
+                    และเป็นจุดชมวิวบริเวณเขาค้อ
+                </p>
+
+                <a
+                    class="icon-link"
+                    href="https://www.google.com/search?q=อนุสรณ์สถานผู้เสียสละเขาค้อ"
+                    target="_blank"
+                    title="ดูข้อมูลอนุสรณ์สถานเขาค้อ">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </a>
+
+                <span class="link-text">
+                    ดูข้อมูลเพิ่มเติม
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 6 ตาดหมอก -->
+
+        <div class="card">
+
+            <img
+                class="card-img"
+                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80"
+                alt="อุทยานแห่งชาติตาดหมอก">
+
+            <div class="card-content">
+
+                <h3>
+                    💦 ตาดหมอก
+                </h3>
+
+                <p>
+                    แหล่งธรรมชาติที่มีน้ำตก
+                    ป่าไม้ และเส้นทางสำหรับผู้รักธรรมชาติ
+                </p>
+
+                <a
+                    class="icon-link"
+                    href="https://www.google.com/search?q=อุทยานแห่งชาติตาดหมอก"
+                    target="_blank"
+                    title="ดูข้อมูลตาดหมอก">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </a>
+
+                <span class="link-text">
+                    ดูข้อมูลเพิ่มเติม
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="section-title">
+
+        <h2>
+            💚 เกี่ยวกับเพชรบูรณ์
+        </h2>
+
+    </div>
+
     <p>
-        เพชรบูรณ์เป็นจังหวัดที่มีธรรมชาติสวยงาม
-        มีภูเขา อากาศเย็น และสถานที่ท่องเที่ยวมากมาย
+        จังหวัดเพชรบูรณ์เป็นจังหวัดที่มีธรรมชาติสวยงาม
+        มีภูเขา ทะเลหมอก น้ำตก และสถานที่ท่องเที่ยว
+        ทางวัฒนธรรมมากมาย เหมาะสำหรับการพักผ่อน
+        และสัมผัสธรรมชาติ
     </p>
+
 </section>
 
-<section id="place">
-    <h2>สถานที่ท่องเที่ยว</h2>
 
-    <table border="1" cellpadding="10">
-        <tr>
-            <th>สถานที่</th>
-            <th>รายละเอียด</th>
-        </tr>
-
-        <tr>
-            <td>เขาค้อ</td>
-            <td>ชมทะเลหมอกและธรรมชาติที่สวยงาม</td>
-        </tr>
-
-        <tr>
-            <td>ภูทับเบิก</td>
-            <td>ชมวิวภูเขาและสัมผัสอากาศหนาว</td>
-        </tr>
-
-        <tr>
-            <td>วัดพระธาตุผาซ่อนแก้ว</td>
-            <td>ชมวัดและสถาปัตยกรรมที่สวยงาม</td>
-        </tr>
-
-        <tr>
-            <td>อุทยานแห่งชาติน้ำหนาว</td>
-            <td>ท่องเที่ยวธรรมชาติและชมป่าไม้</td>
-        </tr>
-    </table>
-</section>
-
-<section id="about">
-    <h2>เกี่ยวกับเพชรบูรณ์</h2>
-    <p>
-        จังหวัดเพชรบูรณ์ตั้งอยู่ในภาคเหนือของประเทศไทย
-        มีสถานที่ท่องเที่ยวทั้งทางธรรมชาติและวัฒนธรรม
-        เหมาะสำหรับการพักผ่อนและท่องเที่ยว
-    </p>
-</section>
-
-<section>
-    <h2>ข้อมูลผู้จัดทำ</h2>
-
-    <table border="1" cellpadding="10">
-        <tr>
-            <td>ชื่อ</td>
-            <td>....................................</td>
-        </tr>
-        <tr>
-            <td>รหัสนักศึกษา</td>
-            <td>....................................</td>
-        </tr>
-        <tr>
-            <td>ชั้น/ห้อง</td>
-            <td>....................................</td>
-        </tr>
-    </table>
-</section>
-
-<hr>
+<!-- ================= FOOTER ================= -->
 
 <footer>
-    <p>จัดทำโดยนักเรียน/นักศึกษา</p>
-    <p>เว็บไซต์แนะนำการท่องเที่ยวจังหวัดเพชรบูรณ์</p>
+
+    <p>
+        © 2026 เที่ยวเพชรบูรณ์
+    </p>
+
+    <div class="social">
+
+        <!-- Facebook -->
+
+        <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            title="Facebook">
+
+            <i class="fa-brands fa-facebook"></i>
+
+        </a>
+
+
+        <!-- Instagram -->
+
+        <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            title="Instagram">
+
+            <i class="fa-brands fa-instagram"></i>
+
+        </a>
+
+
+        <!-- Google -->
+
+        <a
+            href="https://www.google.com/"
+            target="_blank"
+            title="Google">
+
+            <i class="fa-brands fa-google"></i>
+
+        </a>
+
+    </div>
+
 </footer>
+
 
 </body>
 </html>
